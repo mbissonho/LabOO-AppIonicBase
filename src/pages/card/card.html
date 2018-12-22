@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Card</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+      <div class="photo" padding-top>
+        <ion-avatar>
+          <img [src]="'/assets/imgs/homer.jpg'">
+        </ion-avatar>
+      </div>
+    
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label>
+            <p>Nome</p>
+            <h2>{{ profile.name }}</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>
+            <p>Email</p>
+            <h2>{{ profile.email }}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+</ion-content>

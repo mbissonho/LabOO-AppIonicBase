@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form #f="ngForm" (ngSubmit)="onGetResult(f)">
+        <ion-list>
+          <ion-item>
+            <ion-label fixed>A</ion-label>
+            <ion-input
+              type="text"
+              name="vA"
+              ngModel
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label fixed>B</ion-label>
+              <ion-input
+                type="text"
+                name="vB"
+                ngModel
+                required></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <ion-list radio-group>
+            <ion-item>
+              <ion-label>+</ion-label>
+              <ion-radio (ionSelect)="radioChecked('+')"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label>-</ion-label>
+                <ion-radio (ionSelect)="radioChecked('-')"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label>/</ion-label>
+                <ion-radio (ionSelect)="radioChecked('/')"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>*</ion-label>
+                <ion-radio (ionSelect)="radioChecked('*')"></ion-radio>
+            </ion-item>
+
+          </ion-list>
+
+        <button
+          ion-button
+          type="submit"
+          block
+          [disabled]="!f.valid">Calcular</button>
+      </form>
+</ion-content>
